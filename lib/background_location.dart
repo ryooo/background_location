@@ -57,6 +57,8 @@ class BackgroundLocation {
       _location.bearing = location.bearing;
       _location.speed = location.speed;
       _location.time = location.time;
+      _location.heading = location.heading;
+      _location.speedAccuracy = location.speedAccuracy;
       completer.complete(_location);
     });
 
@@ -102,6 +104,8 @@ class BackgroundLocation {
               accuracy: locationData['accuracy'],
               bearing: locationData['bearing'],
               speed: locationData['speed'],
+              heading: locationData['heading'],
+              speedAccuracy: locationData['speed_accuracy'],
               time: locationData['time'],
               isMock: locationData['is_mock']),
         );
@@ -118,6 +122,8 @@ class Location {
   double? bearing;
   double? accuracy;
   double? speed;
+  double? heading;
+  double? speedAccuracy;
   double? time;
   bool? isMock;
 
@@ -128,6 +134,8 @@ class Location {
       @required this.accuracy,
       @required this.bearing,
       @required this.speed,
+      @required this.heading,
+      @required this.speedAccuracy,
       @required this.time,
       @required this.isMock});
 
@@ -139,6 +147,8 @@ class Location {
       'bearing': bearing,
       'accuracy': accuracy,
       'speed': speed,
+      'heading': heading,
+      'speed_accuracy': speedAccuracy,
       'time': time,
       'is_mock': isMock
     };
